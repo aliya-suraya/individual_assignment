@@ -9,7 +9,7 @@
 #define SIZE 1024
 #define PORT 6969
 
-void send_file_data(FILE *fp, int socketfd, struct sockaddr_in server){
+void send_file(FILE *fp, int socketfd, struct sockaddr_in server){
   int n;
   char buffer[SIZE];
 
@@ -58,8 +58,8 @@ int main(){
     exit(1);
   }
 
-  // sedn file data to server
-  send_file_data(fp, socketfd, server);
+  // send file data to server
+  send_file(fp, socketfd, server);
 
   printf("[CLIENT] Data transfer Successful\n");
   printf("[CLIENT] Disconnect from server.\n");
